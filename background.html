@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <p>dddhdjskwi</p>
+    <h2>I like photography.</h2>
+    <script>
+        $(document).ready(function () {
+            var images = ["jumbotron.jpg", "IMG_3640.PNG", "16190054.JPG"];
+            var i = 0;
+            setInterval(function () {
+                $('body').css('background-image', function () {
+                    if (i >= images.length) {
+                        i = 0;
+                    } else {
+                        return "url(images[i++])";
+                    }
+
+                });
+            }, 5000);
+
+        });
+    </script>
+</body>
+
+</html>

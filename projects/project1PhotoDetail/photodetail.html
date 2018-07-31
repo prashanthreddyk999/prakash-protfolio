@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="angular.js"></script>
+-->
+    <style>
+        * {
+            font-family: "Gill Sans Light", "GillSans-Light", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+            font-size: 16px;
+        }
+        
+        img {
+            width: 1000px;
+            height: 570px;
+            margin-left: 14%;
+            padding-top: 15px;
+        }
+        
+        .name {
+            /*            text-align: left;*/
+            letter-spacing: 3px;
+            padding-left: 170px;
+        }
+        
+        .details {
+            border-bottom: 1px solid #8c8d8d;
+        }
+        
+        .inner {
+            /*            display: inline-block;*/
+            padding: 2%;
+            color: #8c8d8d;
+        }
+        
+        .photo-title {
+            padding-left: 650px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="details">
+        <div class="inner">
+            <span class="name">PRASHANTH REDDY</span>
+            <span class="photo-title">{{ detail.title }} </span>
+            <span class="photo-pubdate"> {{ detail.pubdate | date }} </span>
+        </div>
+
+    </div>
+    <div class="photo">
+        <img ng-src="{{ detail.url }}">
+    </div>
+
+</body>
+
+</html>

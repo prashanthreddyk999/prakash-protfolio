@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <title>Web Developer</title>
+    <link rel="icon" type="image/png" href="3-pt.png">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!--    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+    <link href="index.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+<style>
+    .project-list h3 {
+        text-align: center;
+        font-family: 'Roboto Slab', sans-serif;
+        padding: 70px;
+        margin-top: 0;
+        font-size: 35px;
+        font-weight: bold;
+    }
+    
+    .img-wrapper {
+        display: inline-flex;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .imgDescription {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /*        background: rgba(0, 0, 0, 0.65) 0 0/contain fixed;*/
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        margin-top: 0;
+        font-size: 40px;
+        transition: visibility opacity 0.2s;
+        font-family: 'calibri';
+        padding: 60px;
+        height: 300px;
+        transition: transform 0.25s, -webkit-transform 0.5s;
+        margin: 0;
+        overflow: hidden;
+    }
+    
+    .imgDetails {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        /*            background: rgba(0, 0, 0, 0.65);*/
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility opacity 0.2s;
+        font-size: 20px;
+        font-family: 'calibri';
+        padding: 65px;
+        margin-bottom: 0;
+        transition: transform 0.25s, -webkit-transform 0.5s;
+        margin: 0;
+        overflow: hidden;
+    }
+    
+    .img-wrapper:hover .imgDetails {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(20px);
+        margin: 0;
+    }
+    
+    .img-wrapper:hover .imgDescription {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(-20px);
+        margin: 0;
+    }
+    
+    .img-wrapper:hover img {
+        -webkit-filter: grayscale(100%);
+        /*            margin: 0;*/
+        -webkit-transform: scale(1.5);
+        -moz-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+        -o-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+    
+    .img-wrapper img {
+        -webkit-transition: all .2s ease;
+        -moz-transition: all .2s ease;
+        -ms-transition: all .2s ease;
+        -o-transition: all .2s ease;
+        transition: all 2s ease;
+        vertical-align: middle;
+    }
+    
+    .works li {
+        display: inline-block;
+        overflow: hidden;
+        padding: 10px;
+    }
+    
+    .project-list {
+        padding-left: 55px;
+    }
+    /*Home page*/
+    
+    #homepage {
+        background-color: #212121;
+        padding: 150px 0px 40px 20px;
+    }
+    
+    .homepage-link {
+        font-size: 100px;
+        line-height: 160px;
+        display: block;
+        font-family: 'Roboto Slab', sans-serif;
+        font-weight: 700;
+        text-decoration: none;
+        color: #ffffff;
+        background: transparent;
+        position: relative;
+        letter-spacing: 0.06em;
+        transition: color 0.5s;
+        clear: both;
+    }
+    
+    .homepage-link .homepage-link-tagline {
+        transition: opacity 0.3s;
+        opacity: 0;
+        width: 100%;
+    }
+    
+    .homepage-link:hover .homepage-link-tagline {
+        opacity: 1;
+        text-decoration: none;
+    }
+    
+    .homepage-links:hover .homepage-link {
+        color: #333333;
+        text-decoration: none;
+    }
+    
+    .homepage-links:hover .homepage-link:hover {
+        color: #ffffff;
+        text-decoration: none;
+    }
+    
+    .homepage-link-tagline {
+        display: block;
+        position: absolute;
+        bottom: -20px;
+        font-size: 16px;
+        line-height: 20px;
+        height: 52px;
+        /*        font-weight: 400;*/
+        text-transform: none;
+        letter-spacing: 0.02em;
+        font-family: 'Courier New', sans-serif;
+        font-weight: bold;
+    }
+    
+    .homepage-link-tagline-title:before {
+        /* content: "——— "; */
+        letter-spacing: -0.08em;
+    }
+    
+    .homepage-link-tagline-title:after {
+        /* content: " ———"; */
+        letter-spacing: -0.08em;
+    }
+    
+    header#top h1 {
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+        background: url("logo_48.png") 0 0/contain no-repeat;
+        text-indent: -9999px;
+        /*
+        height: 36px;
+        width: 36px;
+*/
+        /*
+        height: 56px;
+        width: 56px;
+*/
+        /*        margin: 12px 0;*/
+        float: right;
+        border: 1px solid white;
+    }
+    
+    .img-text {
+        display: none;
+    }
+    
+    .testlogo {
+        float: right;
+        background-color: #212121;
+        padding-right: 40px;
+        padding-top: 30px;
+    }
+    
+    .testlogo img {
+        /*        border: 2px solid white;*/
+    }
+    /*
+    .imgWrap {
+        position: relative;
+    }
+    
+    .imgDescripti {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.65);
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility opacity 0.9s;
+        font-size: 50px;
+        text-align: center;
+        padding: 60px;
+        transition: opacity 0.4s;
+    }
+    
+    .imgWrap:hover .imgDescripti {
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    .imgWrap:hover img {
+        -webkit-filter: grayscale(100%);
+    }
+*/
+    
+    .textItem {
+        position: absolute;
+        display: none;
+        font-family: calibri, sans-serif;
+        font-size: 100px;
+        color: #ffffff;
+        line-height: 160px;
+        font-family: 'Roboto Slab', sans-serif;
+        font-weight: 700;
+        /*        opacity: 0.4;*/
+    }
+    
+    #quotes {
+        margin: 0px;
+        position: relative;
+        padding-left: 20px;
+    }
+    
+    #jobSprint {
+        text-decoration: none;
+        color: #ffff4d;
+    }
+    
+    #jobSprint:hover {
+        color: #B8B8B8;
+    }
+    
+    a {
+        -webkit-animation: 4s;
+        /* Chrome, Safari, Opera */
+        animation: 4s;
+    }
+</style>
+
+
+<body>
+
+    <!--
+    <header class="main-class">
+        <div class="container">
+            <div class="row">
+                <a class="col-sm-2" href="#">About</a>
+                <a class="col-sm-2" href="#">Email</a>
+                <span class="col-sm-8"></span>
+            </div>
+        </div>
+    </header>
+-->
+    <nav class="testlogo"><img src="3-pt.png" /></nav>
+    <!--
+    <header id="top">
+        <a id="logo" class="buzz" href="#">
+            <h1>Prashanth Reddy</h1>
+        </a>
+    </header>
+-->
+    <div id="quotes">
+        <div class="textItem">HELLO!</div>
+        <div class="textItem">HOLA!</div>
+        <div class="textItem">BONJOUR!</div>
+        <div class="textItem">NAMASTE!</div>
+    </div>
+    <div id="homepage">
+        <div class="homepage-links">
+            <!--
+            <a class="homepage-link">WHY WE MAKE
+            <span class="homepage-link-tagline"><span class="homepage-link-tagline-title">Interested in web development.</span> 
+            </span></a>
+-->
+            <a class="homepage-link" href="#thingsimake">THINGS I MAKE<span class="homepage-link-tagline"><span class="homepage-link-tagline-title">Case studies and my work.</span> 
+            </span></a>
+
+            <a class="homepage-link" href="#aboutMe">ABOUT ME<span class="homepage-link-tagline"><span class="homepage-link-tagline-title">This is who I am.</span> 
+            </span></a>
+
+            <a class="homepage-link" href="#wannaReachMe">WANNA REACH ME<span class="homepage-link-tagline"><span class="homepage-link-tagline-title">I'm just a ping away.</span> 
+            </span></a>
+        </div>
+    </div>
+    <a id="thingsimake"></a>
+    <div class="project-list">
+        <section>
+            <h3>THINGS I MAKE</h3>
+            <ul class="works">
+                <a href="projects/project2newsheadlines/index.html" target="_blank">
+                    <li>
+                        <div class="img-wrapper"><img src="screenshots projects/newsheadlines2.png" width="600px" height="400px" />
+                            <p>
+                                <b class="imgDescription">Sample News Website</b>
+                                <span class="imgDetails">HTML, CSS & Bootstarp</span>
+                            </p>
+
+                        </div>
+                    </li>
+                </a>
+                <a href="projects/project6bestbitesite/index.html" target="_blank">
+                    <li>
+                        <div class="img-wrapper"><img src="screenshots projects/samplefoodsite1.png" width="600px" height="400px" />
+                            <p>
+                                <b class="imgDescription">Sample Food Website</b>
+                                <span class="imgDetails">HTML, CSS & Bootstarp</span>
+                            </p>
+
+                        </div>
+                    </li>
+                </a>
+                <a href="projects/project1PhotoDetail/home.html" target="_blank">
+                    <li>
+                        <div class="img-wrapper"><img src="screenshots projects/photodetail2.png" width="600px" height="400px" />
+                            <p>
+                                <b class="imgDescription">My Photography skills</b>
+                                <span class="imgDetails">HTML, CSS & AngularJS</span>
+                            </p>
+
+                        </div>
+                    </li>
+                </a>
+                <a href="projects/project3hoverimage/index.html" target="_blank">
+                    <li>
+                        <div class="img-wrapper"><img src="screenshots projects/hovereffect.png" width="600px" height="400px" />
+                            <p>
+                                <b class="imgDescription">Hover Over Image</b>
+                                <span class="imgDetails">HTML & CSS</span>
+                            </p>
+
+                        </div>
+                    </li>
+                </a>
+                <a href="projects/project4maginfy/index.html" target="_blank">
+                    <li>
+                        <div class="img-wrapper"><img src="screenshots projects/magnify.png" width="600px" height="400px" />
+                            <p>
+                                <b class="imgDescription">Magnifying glass effect</b>
+                                <span class="imgDetails">HTML, CSS & jQuery</span>
+                            </p>
+
+                        </div>
+                    </li>
+                </a>
+                <a href="projects/project5windowsmodel/index.html" target="_blank">
+                    <li>
+                        <div class="img-wrapper"><img src="screenshots projects/windowsmodel.png" width="600px" height="400px" />
+                            <p>
+                                <b class="imgDescription">Age Calculator</b>
+                                <span class="imgDetails">HTML, CSS & jQuery</span>
+                            </p>
+
+                        </div>
+                    </li>
+                </a>
+            </ul>
+        </section>
+    </div>
+    <div class="slide active-slide">
+        <a id="aboutMe"></a>
+        <div class="container slideone">
+            <div class="col-sm-5">
+                <!--
+                <h1>Hola!</h1>
+                <br />
+-->
+                <p>Hello! My name is Prashanth and I'm a self taught front-end web designer who believes that design is not just what it looks like and feels like... "DESIGN IS HOW IT WORKS".
+                    <br> For the last couple of years I have developed quite a few websites as a part of my learning and I really like trying new things.I can take up challenging tasks and can deliver anything you need.</p>
+                <p> &emsp; I graduated from University of Missouri and I live in Kansas City.I'm currently working in <a href="https://www.sprint.com/" target="_blank" id="jobSprint">Sprint Mobiles</a> as an Interactive Web Developer.</p>
+                <p> &emsp; I am looking for an opportunity as a UI/Product/Interactive Designer. If you are willing to give a chance to an open-minded hard-working eager-to-learn person, do get in touch!</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="testfoot">
+        <a id="wannaReachMe"></a>
+        <section>
+            <h4>Let's Keep in touch.</h4>
+            <p>If you like my work and have some cool project to work on, just send me direct message or contact me through social sites listed below.</p>
+
+            <br></br>
+            <div class="socialnet">
+                <a href="https://www.facebook.com/profile.php?id=100001205814934" target="_blank" class="facebook"></a>
+                <a href="https://www.instagram.com/?hl=en" target="_blank" class="instagram"></a>
+                <a href="mailto:kprashanthreddy61@gmail.com?cc=prashanthreddygr8@gmail.com&subject=subject" class="mail"></a>
+            </div>
+            <span><small>This site is constantly work in progress.;)</small></span>
+        </section>
+        <small id="copyrights">© Prashanth Reddy 2016- Kansas City, MO - <a href="mailto:kprashanthreddy61@gmail.com?cc=prashanthreddygr8@gmail.com&subject=subject">prashanth.k1806@gmail.com</a></small>
+        <div class="tooltip-top">
+            <a href="#" class="back-to-top" title="Back to top">"Back to top"</a>
+        </div>
+    </div>
+
+    <!-- sleepy overlay -->
+
+    <!--
+    <div class="sleepy-overlay">
+        <div class="sleepy-modal">
+            <div class="sleepy-header">
+                <span>Snoozing...</span>
+                <div class="sleepy-close ion-android-close"></div>
+            </div>
+            <div class="sleepy-content">
+                <div class="sleepy-owl">
+                    <div class="sleepy-img"></div>
+                </div>
+                <div class="sleepy-message">
+                    <p>Hey good looking, I have detected that you have been inactive for a while</p>
+                    <p>I got sleepy so I've taken a nap!</p>
+                    <p class="sleepy-mobile-only">Alright Sleepy Head...</p>
+                </div>
+            </div>
+            <div class="sleepy-wake-up">Wake Up!</div>
+        </div>
+    </div>
+-->
+
+    <!--
+    <div class="slider-nav">
+    <a href="#" class="prev-arrow"><img src="arrow-prev.png" /></a>
+    <ul class="dotsslider">
+        <li class="dot active-dot">&bull;</li>
+        <li class="dot">&bull;</li>
+    </ul>
+    <a href="#" class="next-arrow"><img src="arrow-next.png" /></a>
+</div>
+-->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="index.js"></script>
+
+
+</body>
+
+</html>

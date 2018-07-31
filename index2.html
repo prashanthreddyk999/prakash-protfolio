@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="index.css" rel="stylesheet" />
+    <style>
+        .tinted-image {
+            width: 900px;
+            height: 500px;
+            background:
+           linear-gradient(rgba(2,15,23,.35), rgba(2,15,23,.35)),
+           url(images/16190054.JPG);
+            color: white;
+            font-size: 200px;
+        }
+        
+    </style>
+    <!--<style>
+        .wrapper:after , .wrapper:before{
+    content: "";
+    display: table;
+}
+/*.wrapper, section{
+    clear: both;
+}*/
+.hero .message h1 {
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+.hero:before{
+    background: rgba(2,15,23,.35);
+    content: "";
+    /*width: 100%;*/
+    height: auto;
+    position: absolute;
+    /*z-index: -1;*/
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+#home-hero {
+    background: url('images/16190054.JPG'); 
+    /*background-size: cover;*/
+     background-repeat: no-repeat;
+}
+</style>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //$('.flipUp').textrotator({
+            //    animation: "flipUp",
+            //    separator: ",",
+            //    speed: 3500
+            //});
+            $("p").click(function () {
+                alert("ey");
+
+            });
+        });
+    </script>
+</head>
+<body>
+    
+   <div class="tinted-image">Hello</div>
+    <section id="home-hero" class="hero">
+        <div class="wrapper">
+            <article class="message">
+                <h1>Problem Solving </br>in <span class="flipUp" style="display: inline-block; transform: rotateX('-180deg')">Paradise, Pixels, HTML, Hawaii, jQuery, The Web, UX, Mobile, CSS, Javascript</span></h1>
+                <div>Hi i'm Jesse, I'm a Designer and Developer. I focus on user problems and provide genuine solutions. I specialize in brand identity, web design, UI and UX design and of course... front end development.</div>
+                <p>My name is Luís Konrad and I've been creating beautiful pixels. I'm a Brazilian Product Designer, currently working at Huge.</p>
+                <a class="btn" href="#">Let's work together</a>
+            </article>
+        </div>
+    </section>
+   
+</body>
+</html>
